@@ -44,5 +44,19 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: Advertising data from Google Adwords
+
+      - name: bing    
+        identifier: raw_gz_bing
+        description: Advertising data from Bing Ads
+
+      - name: criteo    
+        identifier: raw_gz_criteo
+        description: Advertising data from Criteo                 
                   
-                  
+      - name: facebook    
+        identifier: raw_gz_facebook
+        description: Advertising data from Facebook Ads    
