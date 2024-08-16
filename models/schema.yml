@@ -60,3 +60,53 @@ sources:
       - name: facebook    
         identifier: raw_gz_facebook
         description: Advertising data from Facebook Ads    
+
+models:
+  - name: int_campaigns
+    description: Aggregated campaign costs from different advertising platforms
+    tests:
+      - unique:
+          column_name: "(campaign_key||'_'||date_date)"
+    columns:
+      - name: date_date
+        description: "Date of the campaign data"
+        tests:
+          - not_null
+
+      - name: paid_source
+        description: "Source of the paid advertisement"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Adwords', 'Bing', 'Facebook', 'Criteo']
+
+      - name: campaign_key
+        description: "Unique key for each campaign"
+        tests:
+          - not_null
+          
+      - name: campaign_name
+        description: "Name of the campaign"
+        tests:
+          - not_null
+
+      - name: ads_cost
+        description: "Cost of the advertisements"
+        tests:
+          - not_null
+
+      - name: impression
+        description: "Number of times the ad was shown"
+        tests:
+          - not_null
+
+      - name: click
+        description: "Number of clicks the ad received"
+        tests:
+          - not_null
+      
+
+        
+          
+        
+      
